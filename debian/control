@@ -1,4 +1,4 @@
-Source: ngx-lua
+Source: libnginx-mod-http-lua
 Section: httpd
 Priority: optional
 Maintainer: Debian Nginx Maintainers <pkg-nginx-maintainers@alioth-lists.debian.net>
