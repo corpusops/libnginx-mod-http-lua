@@ -1,0 +1,17 @@
+Tests: lua-resty-lrucache
+Restrictions: allow-stderr isolation-container needs-root
+Depends: curl,
+         libnginx-mod-http-lua,
+         libnginx-mod-http-ndk,
+         nginx,
+         nginx-common,
+         nginx-core,
+
+Tests: lua-resty-core
+Restrictions: allow-stderr isolation-container needs-root
+Depends: curl,
+         libnginx-mod-http-lua,
+         libnginx-mod-http-ndk,
+         nginx,
+         nginx-common,
+         nginx-core,

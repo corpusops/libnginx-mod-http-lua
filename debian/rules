@@ -1,0 +1,13 @@
+#!/usr/bin/make -f
+
+export LUAJIT_INC=/usr/include/luajit-2.1
+export LUAJIT_LIB=/usr/lib/x86_64-linux-gnu/libluajit-5.1.so
+
+%:
+	dh $@ --with=nginx --buildsystem=nginx_mod
+
+override_dh_auto_configure:
+	dh_auto_configure --buildsystem=nginx_mod -- --add-module=/usr/share/nginx-ndk/src
+
+override_dh_auto_test:
+	dh_auto_test --buildsystem=nginx_mod -- ndk_http_module.so

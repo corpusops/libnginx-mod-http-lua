@@ -1,0 +1,5 @@
+ngx-lua (1:0.10.20-1) UNRELEASED; urgency=medium
+
+  * Initial release. (Closes: 1016866)
+
+ -- Jan Mojžíš <jan.mojzis@gmail.com>  Fri, 29 Jul 2022 11:47:51 +0200

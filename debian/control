@@ -1,0 +1,32 @@
+Source: ngx-lua
+Section: httpd
+Priority: optional
+Maintainer: Debian Nginx Maintainers <pkg-nginx-maintainers@alioth-lists.debian.net>
+Uploaders: Christos Trochalakis <ctrochalakis@debian.org>,
+           Ondřej Nový <onovy@debian.org>,
+           Thomas Ward <teward@ubuntu.com>,
+           Jan Mojžíš <jan.mojzis@gmail.com>,
+Build-Depends: debhelper-compat (= 13),
+               libluajit2-5.1-dev,
+               libnginx-mod-http-ndk-dev,
+               nginx-dev (=1.22.0),
+Standards-Version: 4.6.1
+Homepage: https://github.com/openresty/lua-nginx-module
+Vcs-Git: https://salsa.debian.org/nginx-team/libnginx-mod-http-lua.git
+Vcs-Browser: https://salsa.debian.org/nginx-team/libnginx-mod-http-lua
+Rules-Requires-Root: no
+
+Package: libnginx-mod-http-lua
+Architecture: any
+Multi-Arch: foreign
+Depends: libnginx-mod-http-ndk,
+         lua-resty-core,
+         ${misc:Depends},
+         ${shlibs:Depends},
+Recommends: nginx,
+Description: Lua module for Nginx
+ Embed Lua runtime into nginx.
+ .
+ This module embeds Lua, via LuaJIT 2-5.1, into Nginx and by leveraging Nginx's
+ subrequests, allows the integration of the powerful Lua threads
+ (Lua coroutines) into the Nginx event model.
