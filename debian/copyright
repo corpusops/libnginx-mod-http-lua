@@ -8,6 +8,11 @@ Copyright: 2009-2017, by Xiaozhe Wang (chaoslawful) <chaoslawful@gmail.com>.
            2009-2019, by Yichun "agentzh" Zhang (章亦春) <agentzh@gmail.com>, OpenResty Inc.
 License: BSD-2-clause
 
+Files: debian/*
+Copyright: 2022, Jan Mojzis <jan.mojzis@gmail.com>
+           2022, Miao Wang <shankerwangmiao@gmail.com>
+License: BSD-2-clause
+
 Files: t/lib/CRC32.lua
 Copyright: 2007-2008, Neil Richardson (nrich@iinet.net.au)
 License: Expat
