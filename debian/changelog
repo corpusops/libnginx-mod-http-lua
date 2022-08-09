@@ -1,4 +1,4 @@
-ngx-lua (1:0.10.20-1) UNRELEASED; urgency=medium
+ngx-lua (1:0.10.21-1) UNRELEASED; urgency=medium
 
   * Initial release. (Closes: 1016866)
 
