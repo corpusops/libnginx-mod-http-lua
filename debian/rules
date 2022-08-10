@@ -3,6 +3,8 @@
 export LUAJIT_INC=/usr/include/luajit-2.1
 export LUAJIT_LIB=/usr/lib/x86_64-linux-gnu/libluajit-5.1.so
 
+export DEB_CFLAGS_MAINT_APPEND = -DLUA_DEFAULT_PATH=\"/usr/share/lua/5.1/\?.lua\;\"
+
 %:
 	dh $@ --with=nginx --buildsystem=nginx_mod
 
