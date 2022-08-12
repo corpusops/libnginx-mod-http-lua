@@ -1,0 +1,31 @@
+#!/bin/sh
+set -e
+
+cat <<EOF > "/etc/nginx/sites-enabled/default"
+server {
+	listen 80 default_server;
+
+	location /ping {
+		content_by_lua 'ngx.say("PONG")';
+	}
+}
+EOF
+
+exp="PONG
+response_code: 200"
+
+nginx -t
+invoke-rc.d nginx restart
+out=`curl --fail -w "response_code: %{http_code}\n" http://127.0.0.1/ping`
+
+if [ x"${out}" != x"${exp}" ]; then
+  echo "output:"
+  echo "====================="
+  echo "${out}"
+  echo "====================="
+  echo "expected output:"
+  echo "====================="
+  echo "${exp}"
+  echo "====================="
+  exit 1
+fi
