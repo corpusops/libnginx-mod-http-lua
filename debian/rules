@@ -1,5 +1,7 @@
 #!/usr/bin/make -f
 
+export DEB_BUILD_MAINT_OPTIONS = hardening=+all
+
 export LUAJIT_INC=/usr/include/luajit-2.1
 export LUAJIT_LIB=/usr/lib/x86_64-linux-gnu/libluajit-5.1.so
 
