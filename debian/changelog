@@ -2,6 +2,10 @@ libnginx-mod-http-lua (1:0.10.21-2) UNRELEASED; urgency=medium
 
   * d/control: Build only on architectures (amd64 arm64 armel armhf i386
     mips64el mipsel s390x) where luajit2 is stable.
+  * d/t/lua-resty-core: removed, and the test moved to the package
+    lua-resty-core
+  * d/t/lua-resty-lrucache: removed, and the test moved to the package
+    lua-resty-lrucache
 
  -- Jan Mojžíš <jan.mojzis@gmail.com>  Thu, 18 Aug 2022 07:45:37 +0200
 
