@@ -1,4 +1,4 @@
-libnginx-mod-http-lua (1:0.10.21-2) UNRELEASED; urgency=medium
+libnginx-mod-http-lua (1:0.10.21-2) unstable; urgency=medium
 
   * d/control: Build only on architectures (amd64 arm64 armel armhf i386
     mips64el mipsel s390x) where luajit2 is stable.
