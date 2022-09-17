@@ -1,6 +1,8 @@
 libnginx-mod-http-lua (1:0.10.22-1) UNRELEASED; urgency=medium
 
   * New upstream version 0.10.22
+  * d/t/simple updated, the test is skipped if libnginx-mod-http-lua module
+    or lua-resty-core can't be installed
 
  -- Jan Mojžíš <jan.mojzis@gmail.com>  Sat, 17 Sep 2022 08:30:40 +0200
 
