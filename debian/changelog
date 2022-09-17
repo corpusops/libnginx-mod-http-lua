@@ -1,4 +1,4 @@
-libnginx-mod-http-lua (1:0.10.22-1) UNRELEASED; urgency=medium
+libnginx-mod-http-lua (1:0.10.22-1) unstable; urgency=medium
 
   * New upstream version 0.10.22
   * d/t/simple updated, the test is skipped if libnginx-mod-http-lua module
