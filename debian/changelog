@@ -1,3 +1,9 @@
+libnginx-mod-http-lua (1:0.10.22-1) UNRELEASED; urgency=medium
+
+  * New upstream version 0.10.22
+
+ -- Jan Mojžíš <jan.mojzis@gmail.com>  Sat, 17 Sep 2022 08:30:40 +0200
+
 libnginx-mod-http-lua (1:0.10.21-2) unstable; urgency=medium
 
   * d/control: Build only on architectures (amd64 arm64 armel armhf i386
