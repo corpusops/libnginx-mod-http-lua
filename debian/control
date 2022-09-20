@@ -21,7 +21,8 @@ Package: libnginx-mod-http-lua
 Architecture: amd64 arm64 armel armhf i386 mips64el mipsel s390x
 Multi-Arch: foreign
 Depends: libnginx-mod-http-ndk,
-         lua-resty-core,
+         lua-resty-core (<<0.1.24.1~),
+         lua-resty-core (>=0.1.24),
          ${misc:Depends},
          ${shlibs:Depends},
 Recommends: nginx,
