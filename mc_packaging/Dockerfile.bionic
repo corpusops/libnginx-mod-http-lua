@@ -1,0 +1,37 @@
+FROM ubuntu:bionic
+ENV DEBIAN_FRONTEND=noninteractive
+ADD mc_packaging/sources.list /etc/apt/sources.list
+ENV __mirror__=http://ubuntu.mirrors.ovh.net/ubuntu/
+ENV DEBIAN_FRONTEND=noninteractive
+RUN  id=$(cat /etc/lsb-release |grep CODE|awk -F= '{print $2}') &&\
+    sed -ire "s|__mirror__|$__mirror__|g" /etc/apt/sources.list &&\
+    sed -i -re "s/xenial/$id/g" /etc/apt/sources.list &&\
+    apt update && apt install -y lsb-release && \
+    apt-get update -qq && apt-get install -y --force-yes \
+    dh-systemd\
+    debhelper devscripts equivs quilt libexpat-dev libssl-dev libxslt1-dev zlib1g-dev libperl-dev software-properties-common
+RUN ( apt install -y --force-yes  --no-install-recommends libgd2 libgd2-dev || \
+      apt install -y --force-yes  --no-install-recommends libgd3 libgd-dev; )
+RUN apt install -y --force-yes --no-install-recommends libpcre3-dev
+RUN rev=1 && add-apt-repository -y ppa:corpusops/nginx && apt-get update -qq
+WORKDIR /src
+ADD debian/control        ./debian/control
+ADD mc_packaging          ./mc_packaging
+RUN mc_packaging/debian_compat.sh
+RUN mk-build-deps -t "apt-get --no-install-recommends -y --force-yes" -ir debian/control
+ADD ./config              ./config             
+ADD ./debian              ./debian             
+ADD ./doc                 ./doc                
+ADD ./dtrace              ./dtrace             
+ADD ./mc_packaging        ./mc_packaging       
+ADD ./misc                ./misc               
+ADD ./README.markdown     ./README.markdown    
+ADD ./src                 ./src                
+ADD ./t                   ./t                  
+ADD ./tapset              ./tapset             
+ADD ./util                ./util               
+ADD ./valgrind.suppress   ./valgrind.suppress  
+RUN mc_packaging/debian_compat.sh
+RUN export MAKEOPTS="-j4" && \
+    if debuild -i -us -uc -b;then echo SUCCESS; else echo FAIL; exit 1;fi
+
